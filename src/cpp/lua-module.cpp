@@ -107,9 +107,9 @@ int luaopen_effil(lua_State* L) {
 
     sol::usertype<EffilApiMarker> type("new", sol::no_constructor,
             "thread",       luaThreadConfig,
-            "thread_id",    threadId,
-            "sleep",        sleep,
-            "yield",        yield,
+            "thread_id",    this_thread::threadId,
+            "sleep",        this_thread::sleep,
+            "yield",        this_thread::yield,
             "table",        createTable,
             "rawset",       SharedTable::luaRawSet,
             "rawget",       SharedTable::luaRawGet,
